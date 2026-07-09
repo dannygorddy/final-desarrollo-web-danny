@@ -1,0 +1,57 @@
+{
+  "eventos": [
+    {
+      "id": "1",
+      "titulo": "Conferencia de Ingeniería Web",
+      "descripcion": "Evento académico sobre desarrollo frontend con React.",
+      "fecha": "2026-07-15",
+      "hora": "10:00",
+      "lugar": "Auditorio Universidad Continental",
+      "tipo": "Conferencia",
+      "ponente": "Ing. Carlos Ramos",
+      "cupos": 80
+    },
+    {
+      "id": "2",
+      "titulo": "Taller de React",
+      "descripcion": "Taller práctico sobre componentes, rutas y consumo de API.",
+      "fecha": "2026-07-20",
+      "hora": "15:00",
+      "lugar": "Laboratorio de Sistemas",
+      "tipo": "Taller",
+      "ponente": "Mg. Ana Torres",
+      "cupos": 30
+    }
+  ],
+  "participantes": [
+    {
+      "id": "1",
+      "nombre": "Danny Huaman",
+      "correo": "70580929@continental.edu.pe",
+      "codigo": "70580929",
+      "tipo": "Estudiante"
+    },
+    {
+      "nombre": "susan",
+      "correo": "juan.perez@continental.edu.pe",
+      "codigo": "77889900",
+      "tipo": "Estudiante",
+      "id": "w0Eg8LOeExA"
+    }
+  ],
+  "inscripciones": [
+    {
+      "id": "1",
+      "eventoId": "1",
+      "participanteId": "1",
+      "fechaInscripcion": "2026-07-08"
+    },
+    {
+      "eventoId": "2",
+      "participanteId": "w0Eg8LOeExA",
+      "fechaInscripcion": "2026-07-08",
+      "id": "M02a7T09gtE"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
