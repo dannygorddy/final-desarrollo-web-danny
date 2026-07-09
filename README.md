@@ -35,3 +35,48 @@ Instalar dependencias:
 
 ```bash
 npm install
+
+Ejecutar la API
+
+npm run api
+
+La API se ejecuta en:
+
+http://localhost:3001
+
+
+Ejecutar la aplicación React
+
+En otra terminal:
+
+npm run dev
+
+La aplicación se ejecuta en:
+
+http://localhost:5173
+Ejecutar pruebas
+npm run test
+Compilar el proyecto
+npm run build
+Funcionalidades principales
+Registrar eventos.
+Visualizar eventos.
+Buscar eventos.
+Actualizar eventos.
+Eliminar eventos.
+Registrar participantes.
+Inscribir participantes en eventos.
+Consultar inscritos.
+Filtrar inscritos por evento o participante.
+
+
+Autor
+Danny Gorddy Huaman Chavez
+
+
+### 4. Guarda
+
+Presiona:
+
+```text
+Ctrl + S
