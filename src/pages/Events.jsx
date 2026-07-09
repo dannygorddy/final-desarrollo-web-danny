@@ -3,6 +3,11 @@ import api from "../services/api";
 import EventCard from "../components/EventCard";
 import EventForm from "../components/EventForm";
 import SearchBar from "../components/SearchBar";
+import {
+  mostrarExito,
+  mostrarError,
+  confirmarEliminacion,
+} from "../services/alerts";
 
 function Events() {
   const [eventos, setEventos] = useState([]);
@@ -23,34 +28,40 @@ function Events() {
   }, []);
 
   const guardarEvento = async (evento) => {
-    try {
-      if (eventoEditando) {
-        await api.put(`/eventos/${eventoEditando.id}`, evento);
-        setEventoEditando(null);
-      } else {
-        await api.post("/eventos", evento);
-      }
-
-      obtenerEventos();
-    } catch (error) {
-      console.error("Error al guardar evento:", error);
-    }
-  };
-
-  const eliminarEvento = async (id) => {
-    const confirmar = confirm("¿Estás seguro de eliminar este evento?");
-
-    if (!confirmar) {
-      return;
+  try {
+    if (eventoEditando) {
+      await api.put(`/eventos/${eventoEditando.id}`, evento);
+      setEventoEditando(null);
+      mostrarExito("El evento fue actualizado correctamente.");
+    } else {
+      await api.post("/eventos", evento);
+      mostrarExito("El evento fue registrado correctamente.");
     }
 
-    try {
-      await api.delete(`/eventos/${id}`);
-      obtenerEventos();
-    } catch (error) {
-      console.error("Error al eliminar evento:", error);
-    }
-  };
+    obtenerEventos();
+  } catch (error) {
+    console.error("Error al guardar evento:", error);
+    mostrarError("No se pudo guardar el evento.");
+  }
+};
+const eliminarEvento = async (id) => {
+  const confirmar = await confirmarEliminacion(
+    "Esta acción eliminará el evento seleccionado."
+  );
+
+  if (!confirmar) {
+    return;
+  }
+
+  try {
+    await api.delete(`/eventos/${id}`);
+    obtenerEventos();
+    mostrarExito("El evento fue eliminado correctamente.");
+  } catch (error) {
+    console.error("Error al eliminar evento:", error);
+    mostrarError("No se pudo eliminar el evento.");
+  }
+};
 
   const eventosFiltrados = eventos.filter((evento) => {
     const texto = busqueda.toLowerCase();

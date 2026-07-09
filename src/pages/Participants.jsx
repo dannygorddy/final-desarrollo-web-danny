@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import ParticipantForm from "../components/ParticipantForm";
+import {
+  mostrarExito,
+  mostrarError,
+  confirmarEliminacion,
+} from "../services/alerts";
 
 function Participants() {
   const [participantes, setParticipantes] = useState([]);
@@ -18,29 +23,35 @@ function Participants() {
     obtenerParticipantes();
   }, []);
 
-  const registrarParticipante = async (participante) => {
-    try {
-      await api.post("/participantes", participante);
-      obtenerParticipantes();
-    } catch (error) {
-      console.error("Error al registrar participante:", error);
-    }
-  };
+const registrarParticipante = async (participante) => {
+  try {
+    await api.post("/participantes", participante);
+    obtenerParticipantes();
+    mostrarExito("El participante fue registrado correctamente.");
+  } catch (error) {
+    console.error("Error al registrar participante:", error);
+    mostrarError("No se pudo registrar el participante.");
+  }
+};
 
-  const eliminarParticipante = async (id) => {
-    const confirmar = confirm("¿Estás seguro de eliminar este participante?");
+const eliminarParticipante = async (id) => {
+  const confirmar = await confirmarEliminacion(
+    "Esta acción eliminará al participante seleccionado."
+  );
 
-    if (!confirmar) {
-      return;
-    }
+  if (!confirmar) {
+    return;
+  }
 
-    try {
-      await api.delete(`/participantes/${id}`);
-      obtenerParticipantes();
-    } catch (error) {
-      console.error("Error al eliminar participante:", error);
-    }
-  };
+  try {
+    await api.delete(`/participantes/${id}`);
+    obtenerParticipantes();
+    mostrarExito("El participante fue eliminado correctamente.");
+  } catch (error) {
+    console.error("Error al eliminar participante:", error);
+    mostrarError("No se pudo eliminar el participante.");
+  }
+};
 
   return (
     <section>

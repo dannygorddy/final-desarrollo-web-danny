@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { mostrarAdvertencia } from "../services/alerts";
 
 function InscriptionForm({ eventos, participantes, onSubmit }) {
   const [formulario, setFormulario] = useState({
@@ -19,7 +20,7 @@ function InscriptionForm({ eventos, participantes, onSubmit }) {
     e.preventDefault();
 
     if (!formulario.eventoId || !formulario.participanteId) {
-      alert("Selecciona un evento y un participante.");
+      mostrarAdvertencia("Selecciona un evento y un participante antes de registrar la inscripción.");
       return;
     }
 

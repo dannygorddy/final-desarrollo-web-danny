@@ -1,67 +1,78 @@
 {
   "eventos": [
     {
-      "id": "1",
-      "titulo": "Conferencia de Ingeniería Web",
-      "descripcion": "Evento académico sobre desarrollo frontend con React.",
-      "fecha": "2026-07-15",
-      "hora": "10:00",
-      "lugar": "Auditorio Universidad Continental",
-      "tipo": "Conferencia",
-      "ponente": "Ing. Carlos Ramos",
-      "cupos": 80
-    },
-    {
       "id": "2",
       "titulo": "Taller de React",
       "descripcion": "Taller práctico sobre componentes, rutas y consumo de API.",
       "fecha": "2026-07-20",
       "hora": "17:00",
       "lugar": "Laboratorio de Sistemas",
-      "tipo": "Taller",
+      "tipo": "Conferencia",
       "ponente": "Mg. Ana Torres",
       "cupos": 30
     },
     {
-      "titulo": "fotografia",
-      "descripcion": "taller de fotografioa ",
-      "fecha": "2026-07-24",
-      "hora": "14:00",
-      "lugar": "Laboratorio de Sistemas",
-      "tipo": "Taller",
+      "titulo": "2222",
+      "descripcion": "020202",
+      "fecha": "2026-07-30",
+      "hora": "15:00",
+      "lugar": "Auditorio Universidad Continental",
+      "tipo": "Conferencia",
       "ponente": "danny huaman chavez",
-      "cupos": 40,
-      "id": "n4M1FFhyk5o"
+      "cupos": 20,
+      "id": "sIXNQHjSAY4"
+    },
+    {
+      "titulo": "Taller de React",
+      "descripcion": "dsdsd",
+      "fecha": "2026-07-09",
+      "hora": "11:00",
+      "lugar": "Sala de Conferencias",
+      "tipo": "Conferencia",
+      "ponente": "Mg. Ana Torres",
+      "cupos": 23,
+      "id": "fgLiOelH0n0"
+    },
+    {
+      "titulo": "fotografia",
+      "descripcion": "lklkl",
+      "fecha": "2026-07-08",
+      "hora": "14:00",
+      "lugar": "Biblioteca Central",
+      "tipo": "Taller",
+      "ponente": "Mg. Ana Torres",
+      "cupos": 98,
+      "id": "2GHYcYsKtr4"
     }
   ],
   "participantes": [
     {
-      "id": "1",
-      "nombre": "Danny Huaman",
-      "correo": "70580929@continental.edu.pe",
-      "codigo": "70580929",
-      "tipo": "Estudiante"
+      "nombre": "danny",
+      "correo": "juan.perez@continental.edu.pe",
+      "codigo": "77889900",
+      "tipo": "Docente",
+      "id": "-URWLlDpcsc"
     },
     {
       "nombre": "susan",
       "correo": "juan.perez@continental.edu.pe",
       "codigo": "77889900",
-      "tipo": "Estudiante",
-      "id": "w0Eg8LOeExA"
+      "tipo": "Docente",
+      "id": "jmkEBN7YPvU"
     }
   ],
   "inscripciones": [
     {
-      "id": "1",
-      "eventoId": "1",
-      "participanteId": "1",
-      "fechaInscripcion": "2026-07-08"
+      "eventoId": null,
+      "participanteId": "-URWLlDpcsc",
+      "fechaInscripcion": "2026-07-09",
+      "id": "TyaQCLyDTU4"
     },
     {
       "eventoId": "2",
-      "participanteId": "w0Eg8LOeExA",
-      "fechaInscripcion": "2026-07-08",
-      "id": "M02a7T09gtE"
+      "participanteId": "-URWLlDpcsc",
+      "fechaInscripcion": "2026-07-09",
+      "id": "kvf8HeM1rvE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

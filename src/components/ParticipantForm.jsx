@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { mostrarAdvertencia } from "../services/alerts";
 
 const estadoInicial = {
   nombre: "",
@@ -28,7 +29,7 @@ function ParticipantForm({ onSubmit }) {
       !formulario.codigo ||
       !formulario.tipo
     ) {
-      alert("Completa todos los campos del participante.");
+     mostrarAdvertencia("Completa todos los campos del participante antes de continuar.");
       return;
     }
 

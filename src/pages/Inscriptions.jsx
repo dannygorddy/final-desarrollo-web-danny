@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import InscriptionForm from "../components/InscriptionForm";
+import {
+  mostrarExito,
+  mostrarError,
+  mostrarAdvertencia,
+  confirmarEliminacion,
+} from "../services/alerts";
 
 function Inscriptions() {
   const [eventos, setEventos] = useState([]);
@@ -38,31 +44,36 @@ function Inscriptions() {
       );
 
       if (yaInscrito) {
-        alert("Este participante ya está inscrito en este evento.");
+        mostrarAdvertencia("Este participante ya se encuentra inscrito en este evento.");
         return;
       }
 
       await api.post("/inscripciones", inscripcion);
-      obtenerDatos();
+obtenerDatos();
+mostrarExito("La inscripción fue registrada correctamente.");
     } catch (error) {
       console.error("Error al registrar inscripción:", error);
     }
   };
 
-  const eliminarInscripcion = async (id) => {
-    const confirmar = confirm("¿Deseas eliminar esta inscripción?");
+const eliminarInscripcion = async (id) => {
+  const confirmar = await confirmarEliminacion(
+    "Esta acción eliminará la inscripción seleccionada."
+  );
 
-    if (!confirmar) {
-      return;
-    }
+  if (!confirmar) {
+    return;
+  }
 
-    try {
-      await api.delete(`/inscripciones/${id}`);
-      obtenerDatos();
-    } catch (error) {
-      console.error("Error al eliminar inscripción:", error);
-    }
-  };
+  try {
+    await api.delete(`/inscripciones/${id}`);
+    obtenerDatos();
+    mostrarExito("La inscripción fue eliminada correctamente.");
+  } catch (error) {
+    console.error("Error al eliminar inscripción:", error);
+    mostrarError("No se pudo eliminar la inscripción.");
+  }
+};
 
   const obtenerEvento = (eventoId) => {
     return eventos.find((evento) => evento.id === eventoId);

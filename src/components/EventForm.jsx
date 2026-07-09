@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { mostrarAdvertencia } from "../services/alerts";
 
 const estadoInicial = {
   titulo: "",
@@ -44,7 +45,7 @@ function EventForm({ onSubmit, eventoEditando, cancelarEdicion }) {
       !formulario.ponente ||
       !formulario.cupos
     ) {
-      alert("Completa todos los campos del evento.");
+      mostrarAdvertencia("Completa todos los campos del evento antes de continuar.");
       return;
     }
 
@@ -115,27 +116,31 @@ function EventForm({ onSubmit, eventoEditando, cancelarEdicion }) {
               />
             </div>
 
-            <div className="col-md-4">
-            <label className="form-label">Hora</label>
-            <select
-                className="form-select"
-                name="hora"
-                value={formulario.hora}
-                onChange={manejarCambio}
-            >
-                <option value="">Seleccione una hora...</option>
-                <option value="08:00">08:00 a. m.</option>
-                <option value="09:00">09:00 a. m.</option>
-                <option value="10:00">10:00 a. m.</option>
-                <option value="11:00">11:00 a. m.</option>
-                <option value="12:00">12:00 p. m.</option>
-                <option value="14:00">02:00 p. m.</option>
-                <option value="15:00">03:00 p. m.</option>
-                <option value="16:00">04:00 p. m.</option>
-                <option value="17:00">05:00 p. m.</option>
-                <option value="18:00">06:00 p. m.</option>
-            </select>
-            </div>
+              <div className="col-md-4">
+                <label className="form-label">Hora</label>
+                <select
+                  className="form-select"
+                  name="hora"
+                  value={formulario.hora}
+                  onChange={manejarCambio}
+                >
+                  <option value="">Seleccione una hora...</option>
+
+                  <optgroup label="Turno mañana">
+                    <option value="08:00">08:00 a. m.</option>
+                    <option value="09:00">09:00 a. m.</option>
+                    <option value="10:00">10:00 a. m.</option>
+                    <option value="11:00">11:00 a. m.</option>
+                  </optgroup>
+
+                  <optgroup label="Turno tarde">
+                    <option value="14:00">02:00 p. m.</option>
+                    <option value="15:00">03:00 p. m.</option>
+                    <option value="16:00">04:00 p. m.</option>
+                    <option value="17:00">05:00 p. m.</option>
+                  </optgroup>
+                </select>
+              </div>
 
             <div className="col-md-4">
               <label className="form-label">Cupos</label>
@@ -150,15 +155,42 @@ function EventForm({ onSubmit, eventoEditando, cancelarEdicion }) {
             </div>
 
             <div className="col-md-6">
-              <label className="form-label">Lugar</label>
-              <input
-                type="text"
-                className="form-control"
+              <label className="form-label">Lugar del evento</label>
+              <select
+                className="form-select"
                 name="lugar"
-                placeholder="Ejemplo: Auditorio Universidad Continental"
                 value={formulario.lugar}
                 onChange={manejarCambio}
-              />
+              >
+                <option value="">Seleccione el lugar del evento...</option>
+
+                <optgroup label="Conferencias y seminarios">
+                  <option value="Auditorio Universidad Continental">
+                    Auditorio Universidad Continental
+                  </option>
+                  <option value="Sala de Conferencias">
+                    Sala de Conferencias
+                  </option>
+                  <option value="Biblioteca Central">
+                    Biblioteca Central
+                  </option>
+                </optgroup>
+
+                <optgroup label="Talleres y actividades prácticas">
+                  <option value="Laboratorio de Sistemas">
+                    Laboratorio de Sistemas
+                  </option>
+                  <option value="Laboratorio Multifuncional">
+                    Laboratorio Multifuncional
+                  </option>
+                  <option value="Aula Taller">
+                    Aula Taller
+                  </option>
+                  <option value="Sala de Innovación">
+                    Sala de Innovación
+                  </option>
+                </optgroup>
+              </select>
             </div>
 
             <div className="col-md-6">
