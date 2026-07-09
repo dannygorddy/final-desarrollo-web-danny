@@ -30,7 +30,7 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 .logo-navbar {
-  width: 160px;
+  width: 200px;
   height: auto;
   object-fit: contain;
   background-color: white;
@@ -124,4 +124,25 @@ body {
 .home-card:hover .card-action-btn {
   background-color: #4b0088;
   transform: scale(1.03);
+}
+.home-banner {
+  width: 100%;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(106, 0, 185, 0.18);
+}
+
+.home-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-description {
+  max-width: 900px;
+  margin: 0 auto 32px auto;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333333;
 }
