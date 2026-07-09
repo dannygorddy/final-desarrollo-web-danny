@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Events from "./pages/Events";
 import Participants from "./pages/Participants";
 import Inscriptions from "./pages/Inscriptions";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/inscripciones" element={<Inscriptions />} />
         </Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   );
 }
