@@ -16,11 +16,22 @@
       "titulo": "Taller de React",
       "descripcion": "Taller práctico sobre componentes, rutas y consumo de API.",
       "fecha": "2026-07-20",
-      "hora": "15:00",
+      "hora": "17:00",
       "lugar": "Laboratorio de Sistemas",
       "tipo": "Taller",
       "ponente": "Mg. Ana Torres",
       "cupos": 30
+    },
+    {
+      "titulo": "fotografia",
+      "descripcion": "taller de fotografioa ",
+      "fecha": "2026-07-24",
+      "hora": "14:00",
+      "lugar": "Laboratorio de Sistemas",
+      "tipo": "Taller",
+      "ponente": "danny huaman chavez",
+      "cupos": 40,
+      "id": "n4M1FFhyk5o"
     }
   ],
   "participantes": [

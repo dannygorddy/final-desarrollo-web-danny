@@ -49,6 +49,7 @@ function ParticipantForm({ onSubmit }) {
                 type="text"
                 className="form-control"
                 name="nombre"
+                 placeholder="Ejemplo: Danny Gorddy Huaman Chavez"
                 value={formulario.nombre}
                 onChange={manejarCambio}
               />
@@ -60,6 +61,7 @@ function ParticipantForm({ onSubmit }) {
                 type="email"
                 className="form-control"
                 name="correo"
+                placeholder="Ejemplo: 70580929@continental.edu.pe"
                 value={formulario.correo}
                 onChange={manejarCambio}
               />
@@ -71,6 +73,7 @@ function ParticipantForm({ onSubmit }) {
                 type="text"
                 className="form-control"
                 name="codigo"
+                placeholder="Ejemplo: 70580929"
                 value={formulario.codigo}
                 onChange={manejarCambio}
               />
@@ -84,7 +87,7 @@ function ParticipantForm({ onSubmit }) {
                 value={formulario.tipo}
                 onChange={manejarCambio}
               >
-                <option value="">Seleccione...</option>
+                <option value="">Seleccione: Estudiante o Docente</option>
                 <option value="Estudiante">Estudiante</option>
                 <option value="Docente">Docente</option>
               </select>

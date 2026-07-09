@@ -67,11 +67,37 @@ function Events() {
     <section>
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
-          <h2 className="fw-bold">Gestión de Eventos</h2>
-          <p className="text-muted mb-0">
-            Registra, visualiza, busca, actualiza y elimina eventos académicos.
-          </p>
-        </div>
+  <h2 className="fw-bold">Gestión de Eventos</h2>
+  <p className="text-muted mb-3">
+    Registra, visualiza, busca, actualiza y elimina eventos académicos.
+  </p>
+
+  <div className="page-banner-grid">
+  <div className="page-banner-item">
+    <img
+      src="/img/banner-evento-1.jpeg"
+      alt="Conferencia académica"
+      className="page-banner-img"
+    />
+  </div>
+
+  <div className="page-banner-item">
+    <img
+      src="/img/banner-evento-2.jpg"
+      alt="Taller académico"
+      className="page-banner-img"
+    />
+  </div>
+
+  <div className="page-banner-item">
+    <img
+      src="/img/banner-evento-3.jpg"
+      alt="Seminario académico"
+      className="page-banner-img"
+    />
+  </div>
+</div>
+</div>
       </div>
 
       <EventForm
